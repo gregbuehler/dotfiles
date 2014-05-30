@@ -16,6 +16,7 @@ def link(path, link_name)
   end
 
   FileUtils.ln_s(path, link_name)
+  puts "\tlinked #{path} to #{link_name}"
 end
 
 puts "Bootstrapping Jeremy's Dotfiles..."
@@ -23,7 +24,7 @@ link "~/.dotfiles/vim/.vimrc", "~/.vimrc"
 link "~/.dotfiles/.jshintrc", "~/.jshintrc"
 link "~/.dotfiles/git/.gitconfig", "~/.gitconfig"
 link "~/.dotfiles/zsh/.zshrc", "~/.zshrc"
-link "~/.dotfiles/zsh/.oh-my-zsh", "~/.oh-my-zsh"
+link "~/.dotfiles/zsh/.omz", "~/.omz"
 link "~/.dotfiles/git/.gitignore_global", "~/.gitignore_global"
 link "~/.dotfiles/vim/vim", "~/.vim"
 link "~/.dotfiles/tmux/.tmux.conf", "~/.tmux.conf"
