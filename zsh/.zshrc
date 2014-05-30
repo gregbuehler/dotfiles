@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.dotfiles/zsh/.oh-my-zsh
+ZSH=$HOME/.dotfiles/zsh/.omz
 
 autoload -U colors && colors
 
