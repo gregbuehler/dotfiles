@@ -19,9 +19,10 @@ def link(path, link_name)
   puts "\tlinked #{path} to #{link_name}"
 end
 
-puts "Bootstrapping Jeremy's Dotfiles..."
+puts "Bootstrapping Greg's Dotfiles..."
 link "~/.dotfiles/vim/.vimrc", "~/.vimrc"
 link "~/.dotfiles/.jshintrc", "~/.jshintrc"
+link "~/.dotfiles/irssi", "~/.irssi"
 link "~/.dotfiles/git/.gitconfig", "~/.gitconfig"
 link "~/.dotfiles/zsh/.zshrc", "~/.zshrc"
 link "~/.dotfiles/zsh/.omz", "~/.omz"
