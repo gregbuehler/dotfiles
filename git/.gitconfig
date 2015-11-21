@@ -8,6 +8,8 @@
 	name = Greg Buehler
 [github]
 	user = gregbuehler
+[push]
+  default = simple
 [alias]
   co = checkout
   c = commit -v
