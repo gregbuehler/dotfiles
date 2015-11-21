@@ -4,10 +4,10 @@
 	editor = vim -c 'startinsert'
 	excludesfile = ~/.gitignore_global
 [user]
-	email = jeremy.saenz@gmail.com
-	name = Jeremy Saenz
+	email = gregory.r.buehler@gmail.com
+	name = Greg Buehler
 [github]
-	user = codegangsta
+	user = gregbuehler
 [alias]
   co = checkout
   c = commit -v
