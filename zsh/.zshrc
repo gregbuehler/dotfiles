@@ -12,6 +12,8 @@ unset GREP_OPTIONS
 # aliases
 alias ping='~/scripts/prettyping.sh --nolegend'
 alias fit='git flow'
+alias fix='reset; stty sane; tput rs1; clear; echo -e "\033c"'
+
 
 export EDITOR=vim
 
@@ -44,3 +46,11 @@ export PATH=$PATH:$GOPATH/bin
 # android
 #export ANDROID_HOME=/opt/android-sdk
 export ANDROID_HOME=/home/gbuehler/Android/Sdk
+
+
+function reconnect () { tmux attach || tmux new; }
+
+function search () {
+  SEARCH_TERM=$1
+  exec cat <(grep -rIlE "$SEARCH_TERM" *) <(find . -iname "*$SEARCH_TERM*" | sed 's#^\./##') | sort -u
+}
