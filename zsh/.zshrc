@@ -10,10 +10,10 @@ source $ZSH/oh-my-zsh.sh
 unset GREP_OPTIONS
 
 # aliases
-alias ping='~/scripts/prettyping.sh --nolegend'
+alias ls='lsd'
 alias fit='git flow'
 alias fix='reset; stty sane; tput rs1; clear; echo -e "\033c"'
-
+alias murder='pkill'
 
 export EDITOR=vim
 
@@ -36,8 +36,6 @@ export NODE_PATH="$(which node)"
 
 # ansible vars
 export ANSIBLE_HOST_KEY_CHECKING=False 
-export ANSIBLE_ROLES_PATH=~/gitlab/devops/deploy/roles 
-export WORKSPACE=~/deploy
 
 # golang
 export GOPATH=~/go
@@ -53,4 +51,11 @@ function reconnect () { tmux attach || tmux new; }
 function search () {
   SEARCH_TERM=$1
   exec cat <(grep -rIlE "$SEARCH_TERM" *) <(find . -iname "*$SEARCH_TERM*" | sed 's#^\./##') | sort -u
+}
+
+function docker-konmari() {
+  ttl=${1:-24}
+
+  docker system prune --force --filter "until=${ttl}h" --all
+  docker volume prune --force --filter "label!=keep"
 }
